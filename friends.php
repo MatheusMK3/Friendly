@@ -11,6 +11,7 @@ if($login)
 	$action = strtolower($_GET["action"]);
 	$uid = strtolower($_GET["uid"]);
 	
+	// Select all friends from the user, id1 and id2 represent who sent the original request to who
 	$sql = "SELECT * FROM connections WHERE id2='".$_SESSION["login_id"]."' OR id1='".$_SESSION["login_id"]."'";
 	$query_friends = mysql_query($sql, $sql_con);
 	
@@ -21,6 +22,7 @@ if($login)
 	{
 		switch($row["status"])
 		{
+			// Detect if person is already a friend. If not (requested), check if the user is not the sender
 			case 0: if($row["id1"] != $_SESSION["login_id"]) $requests[] = $row; break;
 			case 1: $confirmed[] = $row; break;
 		}
@@ -34,6 +36,7 @@ if($login)
 	
 	echo '<div>';
 	
+	// Actions (accept, deny, remove friendship, send request)
 	switch($mode)
 	{
 		case "requests":
@@ -87,6 +90,7 @@ if($login)
 					break;
 			}
 			break;
+		// Friend suggestions
 		case "whotoadd":
 			$sql = "SELECT * FROM users ORDER BY RAND() LIMIT 0, 10";
 			$query = mysql_query($sql, $sql_con);

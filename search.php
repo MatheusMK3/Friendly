@@ -12,6 +12,8 @@ $query = mysql_real_escape_string($query_raw);
 
 if(strlen($query) < 3) header("Location: index.php");
 
+// Boolean search, will return matching profiles
+
 $sql = "SELECT *, MATCH(name) AGAINST ";
 $sql .= "('".$query."' IN BOOLEAN MODE) AS score ";
 $sql .= "FROM users WHERE MATCH(name) AGAINST ";

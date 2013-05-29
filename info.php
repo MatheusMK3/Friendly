@@ -5,6 +5,8 @@ require_once("system/functions.php");
 
 $arg = $_GET["opt"];
 
+// This handles a mini-profile and other functions (like getting time) and user info.
+
 switch(strtolower($arg))
 {
 	case "time": echo time(); break;

@@ -5,6 +5,8 @@ require_once("system/functions.php");
 
 ob_start();
 
+// Destroy sessions and log the user off
+
 unset($_SESSION["login_id"]);
 unset($_SESSION["login_valid"]);
 session_destroy();

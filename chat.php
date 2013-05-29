@@ -1,18 +1,23 @@
 <?php
 
+// Configs
 require_once("config.php");
 require_once("system/functions.php");
 
+// Chats per request
 $count = 10;
 
+// Variables
 $mode = $_GET["mode"];
 $user = $_GET["uid"];
-$last = $_GET["last"];
+$last = $_GET["last"]; // Last request time
 
+// No last request
 if($last == false || strlen($last) == 0) $last = 0;
 
 switch($mode)
 {
+	// Send new chat
 	case "post":
 		if($login && strlen($_POST["body"]) > 0) {
 			$body = $_POST["body"];
@@ -21,6 +26,7 @@ switch($mode)
 			mysql_query($sql, $sql_con);			
 		}
 		break;
+	// Check for new chats
 	case "check":		
 		$new = array();
 		
@@ -44,6 +50,7 @@ switch($mode)
 			echo '<script type="text/javascript">'.$html_messages.'</script>';
 		}
 		break;
+	// Retrieve new chats
 	case "get":
 	default:
 		$sql = "SELECT * FROM webchat WHERE id1='".mysql_real_escape_string($_SESSION["login_id"])."' OR id2='".mysql_real_escape_string($_SESSION["login_id"])."' ORDER BY time ASC";

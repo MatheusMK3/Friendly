@@ -18,6 +18,8 @@ else $sql = "SELECT * FROM updates WHERE author='".mysql_real_escape_string($use
 
 $query = mysql_query($sql, $sql_con);
 
+// This will handle AJAX posts
+
 switch($mode)
 {
 	case "count":

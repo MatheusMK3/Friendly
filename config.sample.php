@@ -1,5 +1,7 @@
 <?php
 
+// After setting all up, rename this to config.php
+
 session_start();
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -11,6 +13,7 @@ global $sql_con;
 global $login;
 global $lang;
 
+// Your MySQL credentials here
 $sql_user = "";	// Your MySQL Username
 $sql_pass = "";	// Your MySQL Password
 $sql_db = "";	// Your MySQL Database

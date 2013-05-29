@@ -7,6 +7,7 @@ ob_start();
 
 if($login)
 {
+	// This part will handle the user homepage, show an AJAX stream, etc.
 	$me = getUser($_SESSION["login_id"]);
 	$myFriends = getFriends($me["id"], "1");
 	
@@ -44,6 +45,7 @@ if($login)
 }
 else
 {
+	// Website default page
 	if($_GET["lang"])
 	{
 		$lang = $_GET["lang"];
