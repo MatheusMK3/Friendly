@@ -1,0 +1,22 @@
+Friendly Micro Social Site: Configuration Guide
+
+1. Introduction
+Welcome to Friendly, a project that started as a weekend project, had some time as a friends network and is now a open-source project.
+With Friendly, you will have a entire base for creating a social website, with support for member registrations, posts, profiles and even searches.
+Keep in mind that Friendly is an unfinished project, and is not meant for creating a complete social website, but it's meant for being a base for a new social website (maybe a friends network, or a company network), to be worked on.
+The project is open-source, and as I improve it (with the community), it will get better, but still, don't expect many changes.
+
+2. License
+I have set no explicit license on this project, you may copy, distribute, modify, or do whatever you want to it. All I ask is that you make a reference to the project website (https://github.com/matheusmk3/friendly).
+The reference can also be in a separated text file (in case of distribution).
+
+3. Configuration How-To
+Friendly comes ready for configuration, all you need is a server running PHP and MySQL.
+Having these requirements, the next step is open your favourite database manager, create a new database and import the file "db_structure.sql", inside the .setup folder.
+With the database structure ready, all you need to do now is open the "config.php" file with your favorite text editor and look for the MySQL Username, Password and Database variables, and fill them accordingly your database.
+After these steps, just browse to your website and you will be greeted with Friendly's default page.
+At this point, you can already create your own account and start modifying the website the way you want!
+Enjoy!
+
+--
+Matheus Pratta <http://mpratta.com.br>, May 28th 2013
